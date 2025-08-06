@@ -21,3 +21,15 @@ def chatbot_response(user_message):
     else:
         return "Lo siento, no entiendo tu pregunta. ¿Puedes reformularla?"
     
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/get_response', methods=['POST'])
+def get_response():
+    user_message = request.json.get('message')
+    response = chatbot_response(user_message)
+    return jsonify({'response': response})
+
+if __name__ == '__main__':
+    app.run(debug=True)
