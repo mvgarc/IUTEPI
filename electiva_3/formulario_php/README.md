@@ -33,14 +33,16 @@ formulario_php/
 │
 ├── .env # Variables de entorno (NO versionar)
 ├── .gitignore # Archivos a ignorar en Git
-└── README.md # Documentación
+└── README.md # Documentación 
+```
 
 ## ⚙️ Configuración
 
 1. **Clona este repositorio**:
    ```bash
    git clone https://github.com/tuusuario/tu-repo.git
-   cd formulario_php
+   cd formulario_php 
+   ```
 
 
 2. Ejecuta el proyecto en tu servidor local (XAMPP, Laragon, etc.)
