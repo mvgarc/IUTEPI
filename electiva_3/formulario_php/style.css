@@ -1,20 +1,95 @@
+/* Fuente moderna y fondo degradado */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f9;
-    text-align: center;
-    margin-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+/* Contenedor principal */
 form {
-    background: white;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    text-align: left;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-input, button {
-    margin: 10px;
-    padding: 8px;
-    width: 200px;
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #444;
+    font-weight: 600;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 6px rgba(102, 126, 234, 0.4);
+}
+
+/* Botón */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #5a67d8;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Mensaje de éxito/error */
+.message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
 }
