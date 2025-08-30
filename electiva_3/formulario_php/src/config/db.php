@@ -1,8 +1,8 @@
 <?php
-require_once "config.php";
+require_once __DIR__ . "/config.php";
 
-// Cargar variables de entorno
-loadEnv(__DIR__ . "/.env");
+// Cargar variables de entorno desde .env
+loadEnv(__DIR__ . "/../../.env");
 
 $host = $_ENV["DB_HOST"];
 $user = $_ENV["DB_USER"];
@@ -14,4 +14,3 @@ $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("Error en la conexión: " . $conn->connect_error);
 }
-?>
