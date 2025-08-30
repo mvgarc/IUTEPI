@@ -14,52 +14,56 @@ Consiste en un formulario de registro de usuario construido con **HTML + CSS (fr
 ---
 
 ## 📂 Estructura del proyecto
-
+```bash
 formulario_php/
 │
-├── config.php # Función para leer variables del .env
-├── db.php # Conexión a la base de datos
-├── index.php # Formulario de registro (frontend)
-├── procesar.php # Lógica backend (insertar datos en BD)
-├── style.css # Estilos CSS
+├── public/ # Archivos accesibles desde el navegador
+│ ├── index.php # Formulario principal
+│ ├── procesar.php # Lógica de registro (controlador básico)
+│ ├── css/
+│ │ └── style.css # Estilos del frontend
+│
+├── src/ # Código fuente (backend)
+│ ├── config/
+│ │ ├── config.php # Función para leer .env
+│ │ └── db.php # Conexión a la base de datos
+│
+├── sql/
+│ └── schema.sql # Script para crear la base de datos
+│
+├── .env # Variables de entorno (NO versionar)
+├── .gitignore # Archivos a ignorar en Git
+└── README.md # Documentación
 
 ## ⚙️ Configuración
 
 1. **Clona este repositorio**:
    ```bash
    git clone https://github.com/tuusuario/tu-repo.git
+   cd formulario_php
 
-2. Crea la base de datos en MySQL:
 
-CREATE DATABASE prototipo_db;
-USE prototipo_db;
-
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-3. Configura tu archivo .env en la raíz del proyecto:
-DB_HOST=
-DB_USER=
-DB_PASS=
-DB_NAME=
-
-4. Ejecuta el proyecto en tu servidor local (XAMPP, Laragon, etc.)
+2. Ejecuta el proyecto en tu servidor local (XAMPP, Laragon, etc.)
 Accede desde el navegador a:
-http://localhost/formulario_php/index.php
+```bash
+    http://localhost/formulario_php/index.php
 
-✅ Resultado esperado
+✅ Flujo del proyecto
 
-- Al registrar un usuario en el formulario, sus datos se guardarán en la tabla usuarios.
+1. Usuario completa el formulario en index.php.
 
-- El backend devuelve un mensaje de confirmación.
+2. procesar.php recibe los datos, llama al controlador, y los guarda en la base de datos.
 
-🔒 Notas de seguridad
+3. Muestra un mensaje de éxito o error estilizado.
 
-- Nunca subas el archivo .env a tu repositorio (usa .gitignore).
+4. Usuario puede volver al formulario con un botón.
 
-- Usa password_hash (ya implementado) para almacenar contraseñas de forma segura.
+🔒 Buenas prácticas
+
+- .env nunca se sube al repositorio (controlado con .gitignore).
+
+- Contraseñas almacenadas con password_hash() (seguras).
+
+- Separación de responsabilidades con estructura MVC simple.
+
+- Estilos modernos y animaciones básicas para una mejor presentación.
