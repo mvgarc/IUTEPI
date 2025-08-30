@@ -1,25 +1,17 @@
 <?php
-include "db.php";
+require_once "../src/config/db.php";
+require_once "../src/controllers/UserController.php";
+
+$controller = new UserController($conn);
 
 $message = "";
-$messageClass = "";
+$class = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre   = $_POST["nombre"];
-    $email    = $_POST["email"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $success = $controller->register($_POST["nombre"], $_POST["email"], $_POST["password"]);
 
-    $sql = "INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $nombre, $email, $password);
-
-    if ($stmt->execute()) {
-        $message = "✅ Usuario registrado correctamente.";
-        $messageClass = "success";
-    } else {
-        $message = "❌ Error: " . $stmt->error;
-        $messageClass = "error";
-    }
+    $message = $success ? "Usuario registrado correctamente." : "Error al registrar.";
+    $class   = $success ? "success" : "error";
 }
 ?>
 <!DOCTYPE html>
@@ -27,12 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Resultado del Registro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <form>
         <h2>Resultado</h2>
-        <div class="message <?php echo $messageClass; ?>">
+        <div class="message <?php echo $class; ?>">
             <?php echo $message; ?>
         </div>
         <a href="index.php">
