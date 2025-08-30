@@ -49,9 +49,10 @@ formulario_php/
 Accede desde el navegador a:
 ```bash
     http://localhost/formulario_php/index.php
+```
 
 ✅ Flujo del proyecto
-
+```bash
 1. Usuario completa el formulario en index.php.
 
 2. procesar.php recibe los datos, llama al controlador, y los guarda en la base de datos.
@@ -59,9 +60,10 @@ Accede desde el navegador a:
 3. Muestra un mensaje de éxito o error estilizado.
 
 4. Usuario puede volver al formulario con un botón.
+```
 
 🔒 Buenas prácticas
-
+```bash
 - .env nunca se sube al repositorio (controlado con .gitignore).
 
 - Contraseñas almacenadas con password_hash() (seguras).
@@ -69,3 +71,4 @@ Accede desde el navegador a:
 - Separación de responsabilidades con estructura MVC simple.
 
 - Estilos modernos y animaciones básicas para una mejor presentación.
+```
