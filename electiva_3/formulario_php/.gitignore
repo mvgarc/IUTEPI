@@ -1,0 +1,32 @@
+# Archivos de entorno (credenciales, claves, etc.)
+.env
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+error_log
+
+# Cachés de PHP
+*.cache
+*.php~ 
+*.swp
+
+# Composer (si llegas a usarlo)
+vendor/
+composer.lock
+
+# Configuración de IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos temporales del sistema
+*.bak
+*.tmp
+
+# Carpeta de subida de archivos (si la llegas a crear)
+uploads/
