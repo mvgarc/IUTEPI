@@ -16,7 +16,6 @@ function loadEnv($path)
         $name  = trim($name);
         $value = trim($value);
 
-        // Evitar sobreescribir variables existentes
         if (!array_key_exists($name, $_ENV)) {
             $_ENV[$name] = $value;
         }
