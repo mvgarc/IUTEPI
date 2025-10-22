@@ -16,6 +16,18 @@ canvas {
   margin-top: 10px;
 }
 
+button {
+  background-color: #0f0;
+  color: #111;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
 button:hover {
   background-color: #5f5;
 }
