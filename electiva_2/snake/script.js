@@ -1,22 +1,29 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
-const box = 20; // tamaño de cada bloque
+const box = 20;
 let score = 0;
-
-// posición inicial de la serpiente
-let snake = [];
-snake[0] = { x: 9 * box, y: 10 * box };
-
-// posición de la comida
-let food = {
-  x: Math.floor(Math.random() * 19 + 1) * box,
-  y: Math.floor(Math.random() * 19 + 1) * box
-};
-
-// dirección inicial
 let direction;
+let snake = [];
+let food;
+let game;
+
+// función que inicializa todo
+function initGame() {
+  score = 0;
+  document.getElementById("score").textContent = score;
+  direction = undefined;
+  snake = [{ x: 9 * box, y: 10 * box }];
+  food = {
+    x: Math.floor(Math.random() * 19 + 1) * box,
+    y: Math.floor(Math.random() * 19 + 1) * box
+  };
+
+  if (game) clearInterval(game);
+  game = setInterval(draw, 100);
+}
 
 document.addEventListener("keydown", changeDirection);
+document.getElementById("restartBtn").addEventListener("click", restartGame);
 
 function changeDirection(event) {
   if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
@@ -29,17 +36,16 @@ function draw() {
   ctx.fillStyle = "#111";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // dibujar comida
+  // comida
   ctx.fillStyle = "red";
   ctx.fillRect(food.x, food.y, box, box);
 
-  // dibujar serpiente
+  // serpiente
   for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = i === 0 ? "lime" : "green";
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
   }
 
-  // movimiento
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
@@ -48,7 +54,7 @@ function draw() {
   if (direction === "RIGHT") snakeX += box;
   if (direction === "DOWN") snakeY += box;
 
-  // si come la comida
+  // comer comida
   if (snakeX === food.x && snakeY === food.y) {
     score++;
     document.getElementById("score").textContent = score;
@@ -57,7 +63,6 @@ function draw() {
       y: Math.floor(Math.random() * 19 + 1) * box
     };
   } else {
-    // elimina el último bloque (movimiento normal)
     snake.pop();
   }
 
@@ -79,12 +84,12 @@ function draw() {
 }
 
 function collision(head, array) {
-  for (let i = 0; i < array.length; i++) {
-    if (head.x === array[i].x && head.y === array[i].y) {
-      return true;
-    }
-  }
-  return false;
+  return array.some(part => head.x === part.x && head.y === part.y);
 }
 
-const game = setInterval(draw, 100);
+function restartGame() {
+  initGame();
+}
+
+// iniciar por primera vez
+initGame();
