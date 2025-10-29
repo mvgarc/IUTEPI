@@ -27,7 +27,7 @@ Cuando las dos cartas coinciden, permanecen descubiertas.
 
 1. Descarga o clona este repositorio:
    ```bash
-   git clone https://github.com/tuusuario/juego-memoria.git
+   git clone https://github.com/mvgarc/juego-memoria.git
    ```
 2. Abre el archivo **`memoria.html`** en tu navegador.
 3. ¡Comienza a jugar y prueba tu memoria! 🧩
