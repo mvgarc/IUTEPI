@@ -41,7 +41,6 @@ Cuando las dos cartas coinciden, permanecen descubiertas.
 - Botón de reinicio sin necesidad de recargar la página.  
 - Diseño adaptable con emojis grandes y centrados.
 
----
 
 ## 💡 Ideal para estudiantes
 
@@ -51,7 +50,6 @@ Este proyecto es excelente para **practicar conceptos básicos e intermedios de 
 - Uso de arrays y funciones.
 - Control de estado del juego (cartas volteadas, coincidencias, movimientos).
 
----
 
 ## 🧩 Captura de ejemplo
 
@@ -59,9 +57,6 @@ Este proyecto es excelente para **practicar conceptos básicos e intermedios de 
 
 ![alt text](image-1.png)
 
-![Vista previa del juego de memoria](https://via.placeholder.com/400x300?text=Juego+de+Memoria)
-
----
 
 ## 👩‍💻 Autor
 
