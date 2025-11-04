@@ -30,3 +30,4 @@ composer.lock
 
 # Carpeta de subida de archivos (si la llegas a crear)
 uploads/
+.sql

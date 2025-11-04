@@ -1,0 +1,6 @@
+# Ignorar archivos sensibles y temporales
+.env
+/vendor/
+*.log
+*.sql
+.DS_Store
