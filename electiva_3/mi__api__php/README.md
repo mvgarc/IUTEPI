@@ -1,6 +1,6 @@
 # 🚀 Proyecto PHP + PDO (Etapa 2)
 
-Este proyecto forma parte de la **Etapa 2** del curso de *Lenguaje de Programación*, donde aprendemos a conectar **PHP con MySQL** usando **PDO** y variables de entorno (`.env`) para proteger las credenciales.
+Este proyecto forma parte de la **Etapa 2** del curso de *ELECTIVA 3*, donde aprendemos a conectar **PHP con MySQL** usando **PDO** y variables de entorno (`.env`) para proteger las credenciales.
 
 ---
 
