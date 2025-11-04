@@ -113,7 +113,7 @@ http://localhost/mi_api_php/api/alumnos/getAlumnos.php
 
 ---
 
-## 🧠 Reto para tus estudiantes
+## 🧠 Reto
 
 Crea un nuevo endpoint en `api/alumnos/createAlumno.php` que:
 1. Reciba los datos del alumno por `POST` (nombre, apellido, edad).  
@@ -131,7 +131,7 @@ Crea un nuevo endpoint en `api/alumnos/createAlumno.php` que:
 
 ---
 
-## 🧑‍💻 Autor
+## Autor
 
 Proyecto desarrollado con fines educativos por **María Valentina García**  
 📚 *Electiva 3 (IUTEPI) – Etapa 2: PHP con Base de Datos*
